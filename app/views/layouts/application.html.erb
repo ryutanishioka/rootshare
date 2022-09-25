@@ -1,15 +1,14 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Rootshare</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+<head>
+  <title>Rootshare</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all'%>
+  <%= javascript_pack_tag 'application'%>
+</head>
 
-    <%= stylesheet_link_tag 'application', media: 'all'%>
-    <%= javascript_pack_tag 'application'%>
-  </head>
-
-  <body>
-    <%= yield %>
-  </body>
+<body>
+  <%= yield %>
+</body>
 </html>
