@@ -1,0 +1,16 @@
+<%# CSS・・・assets/stylesheets/shared/header.css %>
+<header class = "header">
+  <div class = "header-left">
+    <%= image_tag 'bikeicon.png', size: '55x55', class: "header-icon"%>
+    <a class = "header-title" href = "#">RootShare</a>
+  </div>
+  <%#= form_with(url: hoge, local: true, method: :get, class: "search-form") do |form| %>
+    <%#= form.text_field :hoge, placeholder: "投稿を検索する", class: "header-search" %>
+    <%#= form.submit "検索", class: "search-btn" %>
+  <%# end %>
+  <div class = "header-search">検索するところ</div>
+  <div class = "header-right">
+    <a class = "header-signin-btn" href = "#">ログイン</a>
+    <a class = "header-signup-btn" href = "#">新規登録</a>
+  </div>
+</header>

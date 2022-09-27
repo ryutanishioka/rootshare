@@ -1,1 +1,36 @@
-<h1>トップページ</h1>
+<%= render "shared/header" %>
+
+<main>
+  <div class = "main">
+    <div class = "left-bar"></div>
+    <div class = "center">
+      <div class = "share-content">
+        <div class = "share-content-main">
+          <div class = "img-name-title">
+            <div class = "user-image"></div>
+            <div>
+              <p class = "name-content">nickname</p>
+              <p class = "title-content"><%#= %>タイトル</p>
+            </div>
+          </div>
+          <p class = "text-content"><%#= %>投稿内容</p>
+          <%= link_to 'url', "#", class: "url-content"%>
+          <div class = "image-box"><%=image_tag "sample.JPG", class: "image-content"%></div>
+          <div class = "action-content">
+            <%= link_to image_tag("like.png", class:"like-icon", size: "36x36"), "/" %>
+            <%= link_to 'コメントを見る', '/', class: "look-comment"%>
+          </div>
+        </div>
+        <div class = "form-content">
+          <%#= form_with(model: '', local: true) do |form| %>
+            <%#= form.text_area :text, placeholder: "text", rows: "1" ,class: "form-comment" %>
+            <%#= form.submit "SEND", class:"send-form"%>
+          <%# end %>
+          <textarea rows = "1" placeholder = "コメントを入力" class = "form-comment"></textarea>
+          <input type = "submit" value = "画像" class = "send-form">
+        </div>
+      </div>
+    </div>
+    <div class = "right-bar"></div>
+  </div>
+</main>

@@ -1,0 +1,129 @@
+.main{
+  margin-top: 65px;
+  height: calc(100vh - 65px);
+  width: 100vw;
+  display: flex;
+  background-color: #f5f5f5;
+}
+
+/*左のバー*/
+.left-bar{
+  height: 100%;
+  width: 25%;
+}
+
+/*メインのUI*/
+.center{
+  height: 100%;
+  width: 50%;
+}
+
+
+.share-content{
+  margin: 15px 0;
+  width: 100%;
+  border: 1px solid #b3b3b3;
+  border-radius: 10px;
+  background-color: #ffffff;
+}
+
+.share-content-main{
+  margin: 10px;
+}
+
+.img-name-title{
+  display: flex;
+}
+
+.user-image{
+  margin-right: 10px;
+  height: 42px;
+  width: 42px;
+  border: 1px solid black;
+  border-radius: 21px;
+}
+
+.name-content{
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.title-content{
+  margin-bottom: 25px;
+  color: #3e3e3e;
+}
+
+.text-content{
+  margin: 0 52px 20px 52px;
+}
+
+.url-content{
+  margin-left: 52px;
+  color: #3e3e3e;
+}
+
+.image-box{
+  margin: 10px 30px 10px 52px;
+}
+
+.image-content{
+  display: block;
+  max-height: 500px;
+  max-width: 100%;
+  border-radius: 5px;
+}
+
+.action-content{
+  margin: 0 0 10px 52px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.like-icon{
+}
+
+.like-icon:hover{
+  transition: 0.2s;
+  opacity: 0.5;
+}
+
+.look-comment{
+  margin-left: 50px;
+  color: #797979;
+  text-decoration: none;
+}
+
+.form-content{
+  height: 50px;
+  width: 100%;
+  border-top: 1px solid #b3b3b3;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form-comment{
+  border-bottom-left-radius: 10px;
+  width: 100%;
+  padding-left: 52px;
+  border: none;
+  resize: none;
+  /*自動で伸縮するように変更する*/
+}
+
+.send-form{
+  height: 30px;
+  width: 50px;
+  border: none;
+  background-color: #ffffff;
+}
+
+/*右のバー*/
+.right-bar{
+  height: 100%;
+  width: 25%;
+}
+
