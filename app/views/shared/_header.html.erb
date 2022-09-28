@@ -2,7 +2,7 @@
 <header class = "header">
   <div class = "header-left">
     <%= image_tag 'bikeicon.png', size: '55x55', class: "header-icon"%>
-    <a class = "header-title" href = "#">RootShare</a>
+    <%= link_to 'RootShare', root_path, class: "header-title"%>
   </div>
   <%#= form_with(url: hoge, local: true, method: :get, class: "search-form") do |form| %>
     <%#= form.text_field :hoge, placeholder: "投稿を検索する", class: "header-search" %>
@@ -10,7 +10,12 @@
   <%# end %>
   <div class = "header-search">検索するところ</div>
   <div class = "header-right">
-    <a class = "header-signin-btn" href = "#">ログイン</a>
-    <a class = "header-signup-btn" href = "#">新規登録</a>
+    <%if user_signed_in?%>
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header-signin-btn"%>
+      <%= link_to '投稿', "#", class: "header-signup-btn"%>
+    <%else%>
+      <%= link_to 'ログイン', new_user_session_path, class: "header-signin-btn"%>
+      <%= link_to '新規登録', new_user_registration_path, class: "header-signup-btn"%>
+    <%end%>
   </div>
 </header>
