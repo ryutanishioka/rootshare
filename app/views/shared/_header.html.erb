@@ -10,7 +10,12 @@
   <%# end %>
   <div class = "header-search">検索するところ</div>
   <div class = "header-right">
-    <%= link_to 'ログイン', new_user_session_path, class: "header-signin-btn"%>
-    <%= link_to '新規登録', new_user_registration_path, class: "header-signup-btn"%>
+    <%if user_signed_in?%>
+      <%= link_to "ログアウト", "#", class: "header-signin-btn"%>
+      <%= link_to '投稿', "#", class: "header-signup-btn"%>
+    <%else%>
+      <%= link_to 'ログイン', new_user_session_path, class: "header-signin-btn"%>
+      <%= link_to '新規登録', new_user_registration_path, class: "header-signup-btn"%>
+    <%end%>
   </div>
 </header>
