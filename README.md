@@ -8,6 +8,7 @@
 | encrypted_password | string | null: false               |
 | nickname           | string | null: false               |
 | bike               | string |                           |
+| profile            | text   |                           |
 | image              | text   |                           |
 
 ### Association
