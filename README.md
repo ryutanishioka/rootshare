@@ -9,6 +9,7 @@
 | nickname           | string | null: false               |
 | bike               | string |                           |
 | image              | text   |                           |
+| introduction       | text   |                           |
 
 ### Association
 
