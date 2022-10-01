@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2022_09_27_115641) do
     t.string "nickname", null: false
     t.string "bike"
     t.text "image"
+    t.text "introduction"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

@@ -10,6 +10,7 @@
 | bike               | string |                           |
 | profile            | text   |                           |
 | image              | text   |                           |
+| introduction       | text   |                           |
 
 ### Association
 
