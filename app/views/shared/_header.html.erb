@@ -17,7 +17,7 @@
         <li><%=link_to "プロフィール", root_path, class: "header-pulldown-btn"%></li>
         <li><%= link_to "ログアウト", destroy_user_session_path, class: "header-pulldown-btn", method: :delete%></li>
       </ul>
-      <%=link_to '投稿', roots_path, class: "header-signup-btn"%>
+      <%=link_to '投稿', root_path, class: "header-signup-btn"%>
       
     <%else%>
       <%= link_to 'ログイン', new_user_session_path, class: "header-signin-btn"%>
