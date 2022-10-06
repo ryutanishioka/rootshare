@@ -1,0 +1,12 @@
+  <%#ルート投稿機能%>
+  <div class = "root-main" id = "root-main">
+    <div class = "root-post-block">
+      <div class = "root-post-title"><h6>新規投稿を作成</h6></div>
+      <%= form_with url: "#", local: true do |f| %>
+        <%= f.text_field :image, placeholder: "Image Url" %>
+        <%= f.text_area :text, placeholder: "text", rows: "10" %>
+        <%= f.submit "投稿" %>
+      <% end %>
+    </div>
+  </div>
+  <%#ルート投稿機能%>
