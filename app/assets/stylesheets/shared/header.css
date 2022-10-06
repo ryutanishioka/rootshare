@@ -62,9 +62,15 @@
 
 .header-lists li:hover{
   background-color: #dcdcdc;
+  margin: 10px;
 }
 
 .header-pulldown-btn{
   text-decoration: none;
   color: black;
 }
+
+.hidden{
+  display: none;
+}
+

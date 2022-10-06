@@ -9,6 +9,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.0]
       t.string :nickname,           null: false
       t.string :bike
       t.text :image
+      t.text :introduction
 
       ## Recoverable
       t.string   :reset_password_token
