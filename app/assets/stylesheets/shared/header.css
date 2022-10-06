@@ -4,7 +4,7 @@
   position: fixed;
   top: 0px;
   left: 0px;
-  z-index: 999;
+  z-index: 500;
   box-shadow: 0 2px 10px 0 rgba(125, 125, 125, 0.5);
   display: flex;
   justify-content: space-around;
@@ -48,6 +48,7 @@
 
 .header-lists{
   width: 120px;
+  height: 87px;
   position: absolute;
   top: 75px;
   right: 15%;
@@ -56,6 +57,11 @@
 }
 
 .header-lists li{
+  padding: 10px;
+}
+
+.header-lists li:hover{
+  background-color: #dcdcdc;
   margin: 10px;
 }
 
