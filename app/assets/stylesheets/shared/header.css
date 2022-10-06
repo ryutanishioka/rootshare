@@ -4,7 +4,7 @@
   position: fixed;
   top: 0px;
   left: 0px;
-  z-index: 500;
+  z-index: 999;
   box-shadow: 0 2px 10px 0 rgba(125, 125, 125, 0.5);
   display: flex;
   justify-content: space-around;
@@ -41,30 +41,7 @@
 }
 
 .header-signup-btn{
+  color: #3e3e3e;
   margin-left: 20px;
   text-decoration: none;
-  color: black;
-}
-
-.header-lists{
-  width: 120px;
-  height: 87px;
-  position: absolute;
-  top: 75px;
-  right: 15%;
-  background-color: #ffffff;
-  box-shadow: 0 2px 10px 0 rgba(125, 125, 125, 0.5);
-}
-
-.header-lists li{
-  padding: 10px;
-}
-
-.header-lists li:hover{
-  background-color: #dcdcdc;
-}
-
-.header-pulldown-btn{
-  text-decoration: none;
-  color: black;
 }
