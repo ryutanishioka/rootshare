@@ -1,12 +1,22 @@
   <%#ルート投稿機能%>
   <div class = "root-main" id = "root-main">
+    <%=link_to image_tag("close-icon", class:"close-btn", size: "36x36"), root_path, id:"close-btn"%>
     <div class = "root-post-block">
-      <div class = "root-post-title"><h6>新規投稿を作成</h6></div>
-      <%= form_with url: "#", local: true do |f| %>
-        <%= f.text_field :image, placeholder: "Image Url" %>
-        <%= f.text_area :text, placeholder: "text", rows: "10" %>
-        <%= f.submit "投稿" %>
-      <% end %>
+      <div class = "root-post-header"><h6>新規投稿を作成</h6></div>
+      <div class = "root-post-main">
+        <%= form_with url: "#", local: true do |f| %>
+          <%= f.text_field :title, class: "root-post-content", placeholder: "タイトル(必須)" %>
+          <%= f.text_area :content, class: "root-post-content", placeholder: "本文(必須)", rows: "12" %>
+          <%= f.text_field :share, class: "root-post-content", placeholder: "url" %>
+          <div class="click-upload">
+            <p>
+              クリックしてファイルをアップロード
+            </p>
+            <%= f.file_field :image, class: "root-post-image", id:"root-post-image" %>
+          </div>
+          <%= f.submit "投稿", class: "root-post-submit" %>
+        <% end %>
+      </div>
     </div>
   </div>
   <%#ルート投稿機能%>
