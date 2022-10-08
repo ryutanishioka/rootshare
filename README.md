@@ -25,7 +25,7 @@
 | ------------------ | ---------- | ------------------------------ |
 | title              | string     | null: false                    |
 | content            | text       | null: false                    |
-| share              | text       | null: false                    |
+| share              | text       |                                |
 | user               | references | null: false, foreign_key: true |
 
 ### Association
