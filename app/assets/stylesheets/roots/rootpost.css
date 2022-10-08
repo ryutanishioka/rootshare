@@ -10,11 +10,20 @@
   align-items: center;
 }
 
+.hidden{
+  display: none;
+}
+
 .close-btn{
   display: block;
   position: absolute;
   top: 5%;
   left: 70%;
+}
+
+.close-btn:hover{
+  cursor: hand; 
+  cursor: pointer;
 }
 
 .root-post-block{
