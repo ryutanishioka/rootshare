@@ -4,7 +4,10 @@
     <div class = "root-post-block">
       <div class = "root-post-header"><h6>新規投稿を作成</h6></div>
       <div class = "root-post-main">
-        <%= form_with url: "#", local: true do |f| %>
+        <%= form_with model: @root, local: true do |f| %>
+
+          <%= render "shared/errors", model: f.object %>
+
           <%= f.text_field :title, class: "root-post-content", placeholder: "タイトル(必須)" %>
           <%= f.text_area :content, class: "root-post-content", placeholder: "本文(必須)", rows: "12" %>
           <%= f.text_field :share, class: "root-post-content", placeholder: "url" %>
