@@ -1,9 +1,8 @@
-<% if model.errors.any? %>
-  <div class="error-alert">
+
+  <div class="error-alert hidden" id = "error-alert">
     <ul>
-      <% model.errors.full_messages.each do |message| %>
-      <li class='error-message'><%= message %></li>
-      <% end %>
+      <%# <ul class='hidden' id = "error-message">model.errors.full_messages.each do |message| %>
+      <li class = "error-message">タイトルは必須です</li>
+      <li class = "error-message">本文は必須です</li>
     </ul>
   </div>
-<% end %>
