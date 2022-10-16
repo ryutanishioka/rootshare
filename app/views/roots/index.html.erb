@@ -1,6 +1,9 @@
 <%= render "shared/header" %>
 <%= render "rootpost" %>
 <main>
+  <div class="text-alert">
+    <%= flash.now[:alert] %>
+  </div>
   <div class = "main">
     <div class = "left-bar"></div>
     <div class = "center">
