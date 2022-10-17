@@ -18,7 +18,7 @@ class RootsController < ApplicationController
 
 private
   def root_params
-    params.require(:root).permit(:title, :content, :share).merge(user_id: current_user.id)
+    params.require(:root).permit(:title, :content, :share, :image).merge(user_id: current_user.id)
   end
 
 end
