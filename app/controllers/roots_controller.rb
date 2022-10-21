@@ -11,6 +11,7 @@ class RootsController < ApplicationController
     if @root.save
       redirect_to root_path(@root)
     else
+      @roots = Root.includes(:user)
       flash.now[:alert] = '投稿に誤りがあります。投稿ボタンをクリック'
       render :index
     end
