@@ -1,21 +1,28 @@
 <%= render "shared/header" %>
 <%= render "rootpost" %>
 <main>
+  <div class="text-alert">
+    <%= flash.now[:alert] %>
+  </div>
   <div class = "main">
     <div class = "left-bar"></div>
     <div class = "center">
+      <%#投稿した時の画面%>
+      <% @roots.each do |root| %>
       <div class = "share-content">
         <div class = "share-content-main">
           <div class = "img-name-title">
             <div class = "user-image"></div>
             <div>
-              <p class = "name-content">nickname</p>
-              <p class = "title-content"><%#= %>タイトル</p>
+              <p class = "name-content"><%=root.user.nickname%></p>
+              <p class = "title-content"><%=root.title%></p>
             </div>
           </div>
-          <p class = "text-content"><%#= %>投稿内容</p>
-          <%= link_to 'url', "#", class: "url-content"%>
-          <div class = "image-box"><%=image_tag "sample.JPG", class: "image-content"%></div>
+          <p class = "text-content"><%=root.content%></p>
+          <%if root.share.present?%>
+            <%= link_to 'url', root.share, class: "url-content",target: :_blank, rel: "noopener noreferrer"%>
+          <%end%>
+          <div class = "image-box"><%=image_tag root.image, class: "image-content" if root.image.attached?%></div>
           <div class = "action-content">
             <%= link_to image_tag("like.png", class:"like-icon", size: "36x36"), "/" %>
             <%= link_to 'コメントを見る', '/', class: "look-comment"%>
@@ -30,6 +37,8 @@
           <input type = "submit" value = "画像" class = "send-form">
         </div>
       </div>
+      <%end%>
+      <%#投稿した時の画面%>
     </div>
     <div class = "right-bar"></div>
   </div>

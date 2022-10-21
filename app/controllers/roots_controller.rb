@@ -11,13 +11,15 @@ class RootsController < ApplicationController
     if @root.save
       redirect_to root_path(@root)
     else
+      @roots = Root.includes(:user)
+      flash.now[:alert] = '投稿に誤りがあります。投稿ボタンをクリック'
       render :index
     end
   end
 
 private
   def root_params
-    params.require(:root).permit(:title, :content, :share).merge(user_id: current_user.id)
+    params.require(:root).permit(:title, :content, :share, :image).merge(user_id: current_user.id)
   end
 
 end

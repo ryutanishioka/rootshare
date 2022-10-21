@@ -6,7 +6,7 @@
       <div class = "root-post-main">
         <%= form_with model: @root, id: "form", local: true do |f| %>
 
-          <%= render "shared/errors"%>
+          <%= render "shared/errors", model: f.object %>
 
           <%= f.text_field :title, class: "root-post-content", id: "error", placeholder: "タイトル(必須)"%>
           <%= f.text_area :content, class: "root-post-content", id: "error", placeholder: "本文(必須)", rows: "12"%>
@@ -17,7 +17,7 @@
             </p>
             <%= f.file_field :image, class: "root-post-image", id:"root-post-image" %>
           </div>
-          <%= f.submit "投稿", class: "root-post-submit", id: "submit" %>
+          <%= f.submit "投稿", class: "root-post-submit", id: "submit"%>
         <% end %>
       </div>
     </div>
