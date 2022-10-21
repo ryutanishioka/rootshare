@@ -19,7 +19,9 @@
             </div>
           </div>
           <p class = "text-content"><%=root.content%></p>
-          <%= link_to 'url', root.share, class: "url-content",target: :_blank, rel: "noopener noreferrer"%>
+          <%if root.share.present?%>
+            <%= link_to 'url', root.share, class: "url-content",target: :_blank, rel: "noopener noreferrer"%>
+          <%end%>
           <div class = "image-box"><%=image_tag root.image, class: "image-content" if root.image.attached?%></div>
           <div class = "action-content">
             <%= link_to image_tag("like.png", class:"like-icon", size: "36x36"), "/" %>
