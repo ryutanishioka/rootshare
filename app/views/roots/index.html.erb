@@ -7,17 +7,19 @@
   <div class = "main">
     <div class = "left-bar"></div>
     <div class = "center">
+      <%#投稿した時の画面%>
+      <% @roots.each do |root| %>
       <div class = "share-content">
         <div class = "share-content-main">
           <div class = "img-name-title">
             <div class = "user-image"></div>
             <div>
-              <p class = "name-content">nickname</p>
-              <p class = "title-content"><%#= %>タイトル</p>
+              <p class = "name-content"><%=root.user.nickname%></p>
+              <p class = "title-content"><%=root.title%></p>
             </div>
           </div>
-          <p class = "text-content"><%#= %>投稿内容</p>
-          <%= link_to 'url', "#", class: "url-content"%>
+          <p class = "text-content"><%=root.content%>投稿内容</p>
+          <%= link_to 'url', "#", class: "url-content"%><%#url入れる%>
           <div class = "image-box"><%=image_tag "sample.JPG", class: "image-content"%></div>
           <div class = "action-content">
             <%= link_to image_tag("like.png", class:"like-icon", size: "36x36"), "/" %>
@@ -33,6 +35,8 @@
           <input type = "submit" value = "画像" class = "send-form">
         </div>
       </div>
+      <%end%>
+      <%#投稿した時の画面%>
     </div>
     <div class = "right-bar"></div>
   </div>
