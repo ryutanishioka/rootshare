@@ -18,7 +18,16 @@
               <p class = "title-content"><%=root.title%></p>
             </div>
           </div>
-          <p class = "text-content"><%=root.content%></p>
+          <%#もっと見る。のコード(完成させる)%>
+          <%#<%if root.content.length > 20%>
+            <%#<p class = "text-content" id = "close-content"><%=safe_join(root.content.truncate(20).split("\n"),tag(:br))%>
+            <%#<span class = "more-content" id = "more-content" style = "cursor: pointer;" onclick="changeText()">もっと見る</span></p>
+            <p class = "text-open-content hidden" id = "open-content"><%=safe_join(root.content.split("\n"),tag(:br))%>
+            <%#</p>
+          <%else%>
+            <p class = "text-content"><%=safe_join(root.content.split("\n"),tag(:br))%></p>
+          <%#<%end%>
+          <%#もっと見る。のコード%>
           <%if root.share.present?%>
             <%= link_to 'url', root.share, class: "url-content",target: :_blank, rel: "noopener noreferrer"%>
           <%end%>
