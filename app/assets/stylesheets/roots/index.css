@@ -66,6 +66,20 @@ main{
   margin: 0 52px 20px 52px;
 }
 
+.more-content{
+  color: #797979;
+  cursor: pointer;
+  display: inline;
+}
+
+.text-open-content{
+  margin: 0 52px 20px 52px;
+}
+
+.hidden{
+  display: none;
+}
+
 .url-content{
   margin-left: 52px;
   color: #3e3e3e;
