@@ -11,12 +11,21 @@
       <% @roots.each do |root| %>
       <div class = "share-content">
         <div class = "share-content-main">
-          <div class = "img-name-title">
-            <div class = "user-image"></div>
-            <div>
-              <p class = "name-content"><%=root.user.nickname%></p>
-              <p class = "title-content"><%=root.title%></p>
+          <div class = "img-name-title-edit">
+            <div class = "img-name-title">
+              <div class = "user-image"></div>
+              <div>
+                <p class = "name-content"><%=root.user.nickname%></p>
+                <p class = "title-content"><%=root.title%></p>
+              </div>
             </div>
+            <%if current_user.id == root.user_id%>
+            <div class = "ed-de">･･･</div>
+            <ul class = "content-lists hidden" id = "content-pulldown">
+              <li><%=link_to "編集", "/", class: "content-pulldown-btn"%></li>
+              <li><%= link_to "削除", "/", class: "content-pulldown-btn", method: :delete%></li>
+            </ul>
+            <%end%>
           </div>
           <%#もっと見る。のコード(完成させる)%>
           <%#<%if root.content.length > 20%>
@@ -25,11 +34,11 @@
             <p class = "text-open-content hidden" id = "open-content"><%=safe_join(root.content.split("\n"),tag(:br))%>
             <%#</p>
           <%else%>
-            <p class = "text-content"><%=safe_join(root.content.split("\n"),tag(:br))%></p>
+          <p class = "text-content"><%=safe_join(root.content.split("\n"),tag(:br))%></p>
           <%#<%end%>
           <%#もっと見る。のコード%>
           <%if root.share.present?%>
-            <%= link_to 'url', root.share, class: "url-content",target: :_blank, rel: "noopener noreferrer"%>
+          <%= link_to 'url', root.share, class: "url-content",target: :_blank, rel: "noopener noreferrer"%>
           <%end%>
           <div class = "image-box"><%=image_tag root.image, class: "image-content" if root.image.attached?%></div>
           <div class = "action-content">
