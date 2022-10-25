@@ -40,12 +40,18 @@ main{
   margin: 10px;
 }
 
+.img-name-title-edit{
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
 .img-name-title{
   display: flex;
 }
 
 .user-image{
-  margin-right: 10px;
+  margin-right: 8px;
   height: 42px;
   width: 42px;
   border: 1px solid black;
@@ -62,6 +68,35 @@ main{
   color: #3e3e3e;
 }
 
+.ed-de{
+  cursor: pointer;
+  height: 24px;
+}
+
+.content-lists{
+  width: 80px;
+  height: 87px;
+  position: absolute;
+  top: 24px;
+  left: 90%;
+  background-color: #ffffff;
+  box-shadow: 0 2px 10px 0 rgba(125, 125, 125, 0.5);
+}
+
+.content-lists li{
+  padding: 10px;
+}
+
+.content-lists li:hover{
+  background-color: #dcdcdc;
+  padding: 10px;
+}
+
+.content-pulldown-btn{
+  text-decoration: none;
+  color: black;
+}
+
 .text-content{
   margin: 0 52px 20px 52px;
 }
@@ -76,6 +111,9 @@ main{
   margin: 0 52px 20px 52px;
 }
 
+.display{
+  display: block;
+}
 .hidden{
   display: none;
 }
