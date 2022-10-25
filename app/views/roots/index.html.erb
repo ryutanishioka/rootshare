@@ -23,7 +23,7 @@
             <div class = "ed-de">･･･</div>
             <ul class = "content-lists" id = "content-pulldown" style = "display: none;">
               <li><%=link_to "編集", "/", class: "content-pulldown-btn" %></li>
-              <li><%= link_to "削除", "/", class: "content-pulldown-btn", method: :delete%></li>
+              <li><%= link_to "削除", "/roots/#{root.id}", class: "content-pulldown-btn", method: :delete%></li>
             </ul>
             <script>
             /*$('.ed-de').on('click',function(){

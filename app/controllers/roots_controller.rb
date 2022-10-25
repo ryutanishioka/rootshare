@@ -17,6 +17,12 @@ class RootsController < ApplicationController
     end
   end
 
+  def destroy
+    root = Root.find(params[:id])
+    root.destroy
+    redirect_to root_path#アラート入れてもいいかも
+  end
+
 private
   def root_params
     params.require(:root).permit(:title, :content, :share, :image).merge(user_id: current_user.id)
