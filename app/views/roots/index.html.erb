@@ -20,7 +20,7 @@
               </div>
             </div>
             <%if current_user.id == root.user_id%>
-            <div class = "ed-de">･･･</div>
+            <div class = "ed-de" id = "ed-de">･･･</div>
             <ul class = "content-lists hidden" id = "content-pulldown">
               <li><%=link_to "編集", "/", class: "content-pulldown-btn"%></li>
               <li><%= link_to "削除", "/", class: "content-pulldown-btn", method: :delete%></li>
@@ -28,14 +28,19 @@
             <%end%>
           </div>
           <%#もっと見る。のコード(完成させる)%>
-          <%#<%if root.content.length > 20%>
-            <%#<p class = "text-content" id = "close-content"><%=safe_join(root.content.truncate(20).split("\n"),tag(:br))%>
-            <%#<span class = "more-content" id = "more-content" style = "cursor: pointer;" onclick="changeText()">もっと見る</span></p>
-            <p class = "text-open-content hidden" id = "open-content"><%=safe_join(root.content.split("\n"),tag(:br))%>
-            <%#</p>
+          <%if root.content.length > 20%>
+            <p class = "text-content" id = "close-content"><%=safe_join(root.content.truncate(20).split("\n"),tag(:br))%>
+            <span class = "more-content" id = "more-content" style = "cursor: pointer;">もっと見る</span></p>
+            <p class = "text-open-content hidden" id = "open-content"><%=safe_join(root.content.split("\n"),tag(:br))%></p>
+            <script>
+            $('.more-content').click(function(){
+              $(this).closest(".share-content-main").find(".text-content").hide();
+              $(this).closest(".share-content-main").find(".text-open-content").show();
+            });
+            </script>
           <%else%>
           <p class = "text-content"><%=safe_join(root.content.split("\n"),tag(:br))%></p>
-          <%#<%end%>
+          <%end%>
           <%#もっと見る。のコード%>
           <%if root.share.present?%>
           <%= link_to 'url', root.share, class: "url-content",target: :_blank, rel: "noopener noreferrer"%>
@@ -60,5 +65,4 @@
     </div>
     <div class = "right-bar"></div>
   </div>
-
 </main>
