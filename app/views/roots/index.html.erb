@@ -20,14 +20,39 @@
               </div>
             </div>
             <%if current_user.id == root.user_id%>
-            <div class = "ed-de" id = "ed-de">･･･</div>
-            <ul class = "content-lists hidden" id = "content-pulldown">
-              <li><%=link_to "編集", "/", class: "content-pulldown-btn"%></li>
+            <div class = "ed-de">･･･</div>
+            <ul class = "content-lists" id = "content-pulldown" style = "display: none;">
+              <li><%=link_to "編集", "/", class: "content-pulldown-btn" %></li>
               <li><%= link_to "削除", "/", class: "content-pulldown-btn", method: :delete%></li>
             </ul>
+            <script>
+            /*$('.ed-de').on('click',function(){
+              $(this).closest(".img-name-title-edit").find(".content-lists").show();
+            });
+            $(document).on('click',function(e){
+              if(!$(e.target).closest('.img-name-title-edit').length){
+                $('.content-lists').hide();
+              };
+            });*/
+            $('.ed-de').on({'mouseenter':function(){
+              $(this).closest(".img-name-title-edit").find(".content-lists").show();
+            },
+            'mouseleave': function(){
+              $(this).closest(".img-name-title-edit").find(".content-lists").hide();
+            }
+            });
+            
+            $('.content-lists').on({'mouseenter':function(){
+              $(this).closest(".img-name-title-edit").find(".content-lists").show();
+            },
+            'mouseleave': function(){
+              $(this).closest(".img-name-title-edit").find(".content-lists").hide();
+            }
+            });
+            </script>
             <%end%>
           </div>
-          <%#もっと見る。のコード(完成させる)%>
+          <%#もっと見る。のコード%>
           <%if root.content.length > 20%>
             <p class = "text-content" id = "close-content"><%=safe_join(root.content.truncate(20).split("\n"),tag(:br))%>
             <span class = "more-content" id = "more-content" style = "cursor: pointer;">もっと見る</span></p>
