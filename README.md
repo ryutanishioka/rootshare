@@ -14,12 +14,12 @@
 
 ### Association
 
-- has_many :roots
+- has_many :ways
 - has_many :comments
 - has_many :goods
 
 
-## rootsテーブル
+## waysテーブル
 
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
@@ -41,12 +41,12 @@
 | ------------------ | ---------- | ------------------------------ |
 | text               | text       | null: false                    |
 | user               | references | null: false, foreign_key: true |
-| root               | references | null: false, foreign_key: true |
+| way                | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :user
-- belongs_to :root
+- belongs_to :way
 
 
 ## goodsテーブル
@@ -55,10 +55,10 @@
 | ------------------ | ---------- | ------------------------------ |
 | like               | string     | null: false                    |
 | user               | references | null: false, foreign_key: true |
-| order              | references | null: false, foreign_key: true |
+| way                | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :user
-- belongs_to :root
+- belongs_to :way
 

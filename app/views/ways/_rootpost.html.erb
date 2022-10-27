@@ -1,10 +1,10 @@
-  <%#ルート編集機能%>
-  <div class = "root-main" id = "root-main">
-    <%=link_to image_tag("close-icon", class:"close-btn", size: "36x36", id:"x-btn"), root_path%>
+  <%#ルート投稿機能%>
+  <div class = "root-main hidden" id = "root-main">
+    <%=image_tag("close-icon", class:"close-btn", size: "36x36", id:"close-btn")%>
     <div class = "root-post-block">
-      <div class = "root-post-header"><h6>投稿を編集</h6></div>
+      <div class = "root-post-header"><h6>新規投稿を作成</h6></div>
       <div class = "root-post-main">
-        <%= form_with model: @root, id: "form", local: true do |f| %>
+        <%= form_with model: @way, local: true do |f| %>
 
           <%= render "shared/errors", model: f.object %>
 
@@ -22,4 +22,4 @@
       </div>
     </div>
   </div>  
-  <%#ルート編集機能%>
+  <%#ルート投稿機能%>
