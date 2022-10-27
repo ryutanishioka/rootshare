@@ -1,5 +1,5 @@
 FactoryBot.define do
-  factory :root do
+  factory :way do
     
   end
 end

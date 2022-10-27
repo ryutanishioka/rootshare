@@ -1,0 +1,25 @@
+  <%#ルート投稿機能%>
+  <div class = "root-main hidden" id = "root-main">
+    <%=image_tag("close-icon", class:"close-btn", size: "36x36", id:"close-btn")%>
+    <div class = "root-post-block">
+      <div class = "root-post-header"><h6>新規投稿を作成</h6></div>
+      <div class = "root-post-main">
+        <%= form_with model: @way, local: true do |f| %>
+
+          <%= render "shared/errors", model: f.object %>
+
+          <%= f.text_field :title, class: "root-post-content", id: "error", placeholder: "タイトル(必須)"%>
+          <%= f.text_area :content, class: "root-post-content", id: "error", placeholder: "本文(必須)", rows: "12"%>
+          <%= f.text_field :share, class: "root-post-content", id: "error", placeholder: "url" %>
+          <div class="click-upload">
+            <p>
+              クリックしてファイルをアップロード
+            </p>
+            <%= f.file_field :image, class: "root-post-image", id:"root-post-image" %>
+          </div>
+          <%= f.submit "投稿", class: "root-post-submit", id: "submit"%>
+        <% end %>
+      </div>
+    </div>
+  </div>  
+  <%#ルート投稿機能%>

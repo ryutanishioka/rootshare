@@ -1,4 +1,4 @@
-class Root < ApplicationRecord
+class Way < ApplicationRecord
   belongs_to :user
 
   has_one_attached :image

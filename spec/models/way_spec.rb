@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-RSpec.describe Root, type: :model do
+RSpec.describe Way, type: :model do
   pending "add some examples to (or delete) #{__FILE__}"
 end
