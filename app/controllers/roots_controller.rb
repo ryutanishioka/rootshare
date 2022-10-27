@@ -23,6 +23,12 @@ class RootsController < ApplicationController
     redirect_to root_path#アラート入れてもいいかも
   end
 
+  def edit
+    @roots = Root.includes(:user).order("created_at DESC")
+    @root = Root.find(params[:id])
+    render :index
+  end
+
 private
   def root_params
     params.require(:root).permit(:title, :content, :share, :image).merge(user_id: current_user.id)
