@@ -11,7 +11,7 @@ class WaysController < ApplicationController
     if @way.save
       redirect_to root_path(@way)
     else
-      @ways = Way.includes(:user)
+      @ways = Way.includes(:user).order("created_at DESC")
       flash.now[:alert] = '投稿に誤りがあります。投稿ボタンをクリック'
       render :index
     end
