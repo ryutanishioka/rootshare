@@ -1,5 +1,6 @@
 class Way < ApplicationRecord
   belongs_to :user
+  has_many :goods
 
   has_one_attached :image
 

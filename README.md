@@ -53,7 +53,6 @@
 
 | Column             | Type       | Options                        |
 | ------------------ | ---------- | ------------------------------ |
-| like               | string     | null: false                    |
 | user               | references | null: false, foreign_key: true |
 | way                | references | null: false, foreign_key: true |
 
