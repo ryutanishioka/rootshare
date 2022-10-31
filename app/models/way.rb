@@ -1,6 +1,6 @@
 class Way < ApplicationRecord
   belongs_to :user
-  has_many :goods
+  has_many :goods, dependent: :destroy
 
   has_one_attached :image
 

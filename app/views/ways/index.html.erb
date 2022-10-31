@@ -74,10 +74,12 @@
           <%= link_to 'url', way.share, class: "url-content",target: :_blank, rel: "noopener noreferrer"%>
           <%end%>
           <div class = "image-box"><%=image_tag way.image, class: "image-content" if way.image.attached?%></div>
-          <div class = "action-content">
-            <%= link_to image_tag("like.png", class:"like-icon", size: "36x36"), "" %>
-            <%= link_to 'コメントを見る', '', class: "look-comment"%>
+          <%#いいね機能%>
+          <div class = "action-content" id = "way_good_<%way.id%>">
+            <%= render partial: 'goods/good', locals: {way: way} %>
+            <%= link_to 'コメントを見る', '/', class: "look-comment"%>
           </div>
+          <%#いいね機能%>
         </div>
         <div class = "form-content">
           <%#= form_with(model: '', local: true) do |form| %>
