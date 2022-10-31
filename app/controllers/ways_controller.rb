@@ -4,6 +4,7 @@ class WaysController < ApplicationController
   def index
     @ways = Way.includes(:user).order("created_at DESC")
     @way = Way.new
+    @goods = Good.all
   end
 
   def create
