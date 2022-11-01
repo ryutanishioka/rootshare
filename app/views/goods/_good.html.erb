@@ -1,5 +1,5 @@
-<%if good = @goods.find_by(user_id: current_user.id, way_id: way.id)%>
-  <%=link_to image_tag("like_pink.png", class:"like-icon", id: "like-icon", size: "36x36"), "/ways/#{way.id}/goods/#{good.id}", method: :delete, remote: true%>
+<%if current_user.already_good?(way) %>
+  <%=link_to image_tag("like_pink.png", class:"like-icon", id: "like-icon", size: "36x36"), way_good_path(id: way.id, way_id: way.id), method: :delete, remote: true%>
 <%else%>
   <%=link_to image_tag("like.png", class:"like-icon", id: "like-icon", size: "36x36"), way_goods_path(way.id),method: :post, remote: true%>
 <%end%>

@@ -1,2 +1,4 @@
-$("#way_good_<%way.id%>").html("<%= j(render 'goods/good', way: @way) %>");
-console.log('create')
+$(function(){
+  $("#way_good_<%=@way.id%>").html("<%= j(render partial: 'goods/good', locals: {way: @way}) %>");
+  console.log('create');
+});
