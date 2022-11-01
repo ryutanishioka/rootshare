@@ -6,6 +6,7 @@ class User < ApplicationRecord
 
   has_many :ways
   has_many :goods
-
+  has_many :good_ways, through: :goods, source: :way
+  
   validates :nickname, presence: true
 end
