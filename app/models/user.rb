@@ -7,6 +7,10 @@ class User < ApplicationRecord
   has_many :ways
   has_many :goods
   has_many :good_ways, through: :goods, source: :way
-  
+
   validates :nickname, presence: true
+
+  def already_good?(way)
+    goods.exists?(way_id: way.id)
+  end
 end

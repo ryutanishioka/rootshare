@@ -134,27 +134,28 @@ main{
   border-radius: 5px;
 }
 
-.action-content{
+/*いいね・コメント一覧ボタン*/
+.good-comment{
   margin: 0 0 10px 52px;
   display: flex;
-  justify-content: left;
   align-items: center;
 }
 
-/*.like-icon{
-}*/
-
 .like-icon:hover{
   transition: 0.2s;
-  opacity: 0.5;
+  opacity: 0.6;
+}
+
+.comment-find-btn{
+  margin-left: 50px;
 }
 
 .look-comment{
-  margin-left: 50px;
   color: #797979;
   text-decoration: none;
 }
 
+/*コメントフォーム*/
 .form-content{
   height: 50px;
   width: 100%;
