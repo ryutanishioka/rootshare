@@ -22,7 +22,7 @@
                 <p class = "title-content"><%=way.title%></p>
               </div>
             </div>
-            <%if current_user.id == way.user_id%>
+            <%if user_signed_in? && current_user.id == way.user_id%>
             <div class = "ed-de">･･･</div>
             <ul class = "content-lists" id = "content-pulldown" style = "display: none;">
               <li><%=link_to "編集", edit_way_path(way.id), class: "content-pulldown-btn", method: :get%></li>

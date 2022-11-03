@@ -1,7 +1,11 @@
-<%if current_user.already_good?(way) %>
-  <%=link_to image_tag("like_pink.png", class:"like-icon", id: "like-icon", size: "36x36"), way_good_path(id: way.id, way_id: way.id), method: :delete, remote: true %>
+<% if user_signed_in? %>
+  <%if current_user.already_good?(way) %>
+    <%=link_to image_tag("like_pink.png", class:"like-icon", id: "like-icon", size: "36x36"), way_good_path(id: way.id, way_id: way.id), method: :delete, remote: true %>
+  <%else%>
+    <%=link_to image_tag("like.png", class:"like-icon", id: "like-icon", size: "36x36"), way_goods_path(way.id),method: :post, remote: true %>
+  <%end%>
 <%else%>
-  <%=link_to image_tag("like.png", class:"like-icon", id: "like-icon", size: "36x36"), way_goods_path(way.id),method: :post, remote: true %>
+  <%=image_tag "like.png", class:"like-icon", id: "like-icon", size: "36x36" %>
 <%end%>
 
 <%if way.goods.count >= 1%>
