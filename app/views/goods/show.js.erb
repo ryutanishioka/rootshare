@@ -1,0 +1,13 @@
+$(function(){
+  console.log("show");
+
+  $("#way_good_find_<%=@way.id%>").html("<%= j(render 'goods/show')%>");
+
+  $("#good-show-background").css('display', 'flex');
+
+  $(document).on('click', function(e) {
+    if(!$(e.target).closest('.good-show-main').length){
+      $("#good-show-background").css('display', 'none');
+    };
+  });
+});

@@ -5,5 +5,5 @@
 <%end%>
 
 <%if way.goods.count >= 1%>
-  <p class = "good-find-btn">いいね<%=way.goods.count%>件</p>
+  <%= link_to "いいね#{way.goods.count}件", way_good_path(id: way.id, way_id: way.id), class: "good-find-btn", id: "good-find-btn", remote: true %>
 <%end%>

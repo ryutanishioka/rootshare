@@ -1,6 +1,15 @@
 class GoodsController < ApplicationController
   before_action :authenticate_user!
 
+  def show
+    @way = Way.find(params[:way_id])
+    @goods = @way.goods.includes(:user)
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
   def create
     @way = Way.find(params[:way_id])
     good = current_user.goods.create(way_id: params[:way_id])

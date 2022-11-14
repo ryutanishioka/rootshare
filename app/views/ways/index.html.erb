@@ -1,6 +1,5 @@
 <%= render "shared/header" %>
 <%= render "rootpost" %>
-<%= render "goods/show"%>
 <main>
   <div class="text-alert">
     <%= flash.now[:alert] %>
@@ -77,6 +76,7 @@
             <div class = "good-content" id = "way_good_<%=way.id%>">
               <%= render partial: 'goods/good', locals: {way: way} %>
             </div>
+            <div id = "way_good_find_<%=way.id%>"><%= render 'goods/show'%></div>
             <div class = "comment-find-btn">
               <%= link_to 'コメント一覧', '/', class: "look-comment"%>
             </div>
