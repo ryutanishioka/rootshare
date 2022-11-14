@@ -6,8 +6,9 @@
   right: 0;
   z-index: 600;
   background-color: rgba(20, 20, 20, 0.7);
-  display: flex;
+  display: none;
   align-items: center;
+
 }
 
 .close-show-btn{
