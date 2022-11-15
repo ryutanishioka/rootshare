@@ -13,13 +13,15 @@
         <div class = "share-content-main">
           <div class = "img-name-title-edit">
             <div class = "img-name-title">
-              <div class = "user-image"></div>
+              <div class = "user-image">
+                <%= image_tag way.user.portrait, class: "user-image-portrait" if way.user.portrait.attached?%>
+              </div>
               <div>
                 <p class = "name-content"><%=way.user.nickname%></p>
                 <p class = "title-content"><%=way.title%></p>
               </div>
             </div>
-            <%if current_user.id == way.user_id%>
+            <%if user_signed_in? && current_user.id == way.user_id%>
             <div class = "ed-de">･･･</div>
             <ul class = "content-lists" id = "content-pulldown" style = "display: none;">
               <li><%=link_to "編集", edit_way_path(way.id), class: "content-pulldown-btn", method: :get%></li>

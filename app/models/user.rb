@@ -8,6 +8,8 @@ class User < ApplicationRecord
   has_many :goods
   has_many :good_ways, through: :goods, source: :way
 
+  has_one_attached :portrait
+
   validates :nickname, presence: true
 
   def already_good?(way)

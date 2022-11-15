@@ -54,7 +54,11 @@ main{
   margin-right: 8px;
   height: 42px;
   width: 42px;
-  border: 1px solid black;
+}
+
+.user-image-portrait{
+  height: 42px;
+  width: 42px;
   border-radius: 21px;
 }
 
@@ -149,6 +153,7 @@ main{
 .good-find-btn{
   color: #797979;
   margin-left: 5px;
+  text-decoration: none;
 }
 .like-icon:hover{
   transition: 0.2s;
